@@ -1,10 +1,16 @@
 let x;
 let y;
 
+let dvd;
+
 let spd = 2;
 
 let xspeed;
 let yspeed;
+
+function preload() {
+    dvd = loadImage("res/DvdLogo.png");
+}
 
 function setup() {
   let cnv = createCanvas(800,600);
@@ -18,17 +24,14 @@ function setup() {
 
 function draw() {
   background(0);
-  rect(x,y, 80, 60);
-  if (x == width - 80) {
-    xspeed = -spd;
-  } else if (x == 0) {
-    xspeed = spd;
+  // rect(x,y, 80, 60);
+  image(dvd, x, y, dvd.width/2, dvd.height/2);
+  if (x + dvd.width/2 >= width ||x == 0) {
+    xspeed = -xspeed;
   }
 
-  if (y == height - 60) {
-    yspeed = -spd;
-  } else if (y == 0) {
-    yspeed = spd;
+  if (y + dvd.height/2 >= height || y == 0) {
+    yspeed = -yspeed;
   }
   x += xspeed;
   y += yspeed;
