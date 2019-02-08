@@ -4,7 +4,7 @@ let y;
 let dvd;
 let r,g,b;
 
-let spd = 2;
+let spd = 5;
 
 let xspeed;
 let yspeed;
